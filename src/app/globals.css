@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter-tight);
+  --font-heading: var(--font-instrument-serif);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ── Palette: warm paper, ink, one oxblood accent ─────────────────────────
+   Paper #F4EFE7 · Ink #1C1A17 · Stone #5F584E · Oxblood #7A2E22 · Sand #E9E2D6
+   `.night` flips a section to the dark photographic palette. */
+:root {
+  --background: #f4efe7;
+  --foreground: #1c1a17;
+  --card: #fbf8f3;
+  --card-foreground: #1c1a17;
+  --popover: #fbf8f3;
+  --popover-foreground: #1c1a17;
+  --primary: #7a2e22;
+  --primary-foreground: #fbf8f3;
+  --secondary: #e9e2d6;
+  --secondary-foreground: #1c1a17;
+  --muted: #e9e2d6;
+  --muted-foreground: #5f584e;
+  --accent: #e9e2d6;
+  --accent-foreground: #1c1a17;
+  --destructive: #b42318;
+  --border: #d8cfc1;
+  --input: #cbc0ae;
+  --ring: #7a2e22;
+  --radius: 0.125rem;
+  --whatsapp: #25d366;
+  --whatsapp-foreground: #0b1f13;
+}
+
+.night {
+  --background: #171512;
+  --foreground: #efe8dc;
+  --card: #201d19;
+  --card-foreground: #efe8dc;
+  --popover: #201d19;
+  --popover-foreground: #efe8dc;
+  --primary: #d8b88a;
+  --primary-foreground: #171512;
+  --secondary: #2a2621;
+  --secondary-foreground: #efe8dc;
+  --muted: #2a2621;
+  --muted-foreground: #aea596;
+  --accent: #2a2621;
+  --accent-foreground: #efe8dc;
+  --border: rgb(239 232 220 / 16%);
+  --input: rgb(239 232 220 / 24%);
+  --ring: #d8b88a;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading font-normal;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+/* Small uppercase label used for section numbers, captions and meta text. */
+@utility label {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
