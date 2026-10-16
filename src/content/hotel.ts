@@ -26,7 +26,7 @@ export const hotel = {
   checkInTime: "15:00",
   checkOutTime: "12:00",
   /** Public site URL, used for SEO, sitemap and social previews. */
-  url: "https://www.lexesgrand.com", // REPLACE with the real domain
+  url: "https://lexes-grand-hotel.vercel.app", // REPLACE with the hotel's own domain once connected
 
   contact: {
     /** International format, digits only, used for tel: and WhatsApp links. */
